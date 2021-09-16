@@ -1,0 +1,54 @@
+<mat-dialog-content>
+    <div class="header">
+        <mat-card-title>{{data.name}}</mat-card-title>
+        <div class="action">
+            <a mat-icon-button
+            mat-dialog-close
+            routerLink="/edit-student/{{data._id}}"
+            #tooltip="matTooltip"
+            matTooltip="Edit Student"
+            matTooltipPosition="left"
+            matTooltipHideDelay="100000">
+                <mat-icon>create</mat-icon>
+             </a>
+            <!-- <button mat-icon-button>
+                <mat-icon>content_copy</mat-icon>
+            </button> -->
+            <button mat-icon-button (click)="studentDelete(data._id)">
+                <mat-icon color='warn'>delete</mat-icon>
+            </button>
+            <button mat-icon-button mat-dialog-close>
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+
+<img class="modalImage" src="http://localhost:3000/{{data.studentImage}}" alt="{{data.name}}">
+
+
+    <div mat-line>Discipline : {{data.discipline}}</div>
+
+    <div mat-line> Department : {{data.department}}</div>
+
+    <div mat-line>Year : {{ data.year }}</div>
+<br>
+    <div mat-line>Expected Passing Year : {{data.passingYear}}</div>
+
+    <div mat-line>University Roll No. : {{data.universityRollNo}}</div>  
+    <br>
+    <div mat-line>Email address : {{data.email}}</div>
+
+    <div mat-line>Mobile No. : {{data.phone}}</div>
+
+    <!-- <div class="footer">
+        <p> Social Links :</p> 
+        <div class="social-link">
+            <a href="#"><mat-icon>home</mat-icon></a>
+            <a href="#"><mat-icon>home</mat-icon></a>
+            <a href="#"><mat-icon>home</mat-icon></a>
+            <a href="#"><mat-icon>home</mat-icon></a>
+        </div>
+    </div> -->
+
+
+</mat-dialog-content>

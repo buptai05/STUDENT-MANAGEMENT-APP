@@ -1,0 +1,62 @@
+.add-student {
+    text-align: center;
+}
+.mat-form-field-appearance-outline{
+    margin: 4px;
+}
+img {
+    height: 99px;
+    margin-top: 10px;
+    border-radius: 50%;
+    text-align: center;
+}
+.profile{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+.profile .input{
+    position: absolute;
+    bottom: 22px;
+    left: 21px;
+      cursor: pointer;
+    padding: 2px 2px;
+    display: none; 
+    cursor: pointer;
+    z-index: 999;
+}
+.profile  .img {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile:hover .input input[type="file"] {
+    display: block;
+}
+.profile .input input[type="file"] {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    cursor: pointer;
+ 
+}
+.profile .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: none;
+    transition: all ease-in-out 0.4s;
+  
+}
+.profile:hover .input {
+    display: block !important;
+    z-index: 9999;
+}
+.profile:hover .icon {
+    display: block !important;
+}
+.icon mat-icon.mat-icon {
+    color: #fff;
+}

@@ -1,0 +1,41 @@
+/* .container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidenav {
+    padding: 20px;
+  } */
+
+  .sidenav {
+    width: 250px;
+  }
+  .mat-list-item{
+    white-space: 20px;
+  }
+  mat-card.mat-card.mat-focus-indicator h3 {
+    margin-bottom: 0px;
+    line-height: 15px;
+     margin-top: 5px;
+}
+mat-card.mat-card.mat-focus-indicator p {
+  margin-bottom: 7px;
+}
+button.mat-focus-indicator.mat-stroked-button.mat-button-base {
+  border-radius: 20px;
+}
+
+span.ng-star-inserted {
+  margin-left: 8px;
+}
+button.mat-focus-indicator.mat-icon-button.mat-button-base {
+  margin: 3px;
+}

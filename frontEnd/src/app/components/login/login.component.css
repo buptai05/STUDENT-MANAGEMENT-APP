@@ -1,0 +1,14 @@
+.card{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+mat-form-field.mat-form-field {
+    width: 100%;
+  }
+  button.mat-focus-indicator.mat-button.mat-raised-button.mat-button-base.mat-primary {
+    width: 100%;
+}
+.anc{
+    text-align: center;
+}

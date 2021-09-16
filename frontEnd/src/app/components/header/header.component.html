@@ -1,0 +1,48 @@
+<mat-drawer-container class="container" autosize>
+  <mat-toolbar class="mat-elevation-z4 toolbar" color="primary" *ngIf="routes.route!=='/login' && routes.route!=='/register' && routes.route!=='/'">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span *ngIf="routes.route=='/dashboard'">Dashboard</span>
+    <span *ngIf="routes.route=='/students'">Students</span>
+    <span *ngIf="routes.route=='/add-student'">Add Student</span>
+    <span *ngIf="routes.route=='/home'">Home</span>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon matBadge="" matBadgeColor="warn">notifications</mat-icon>
+    </button>
+  
+    <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="_authService.logoutUser()">logout</button>
+  <!-- <button mat-menu-item>Item 2</button> -->
+</mat-menu>
+  </mat-toolbar>
+  <mat-drawer #drawer class="sidenav" mode="over">
+    <!-- Card Starts -->
+
+    <!-- Card Ends -->
+    <mat-nav-list>
+      
+      <mat-card style="text-align: center;">
+        <img mat-card-avatar src="https://bit.ly/3gqNFQY" alt="SR">
+        <h3>{{name}}</h3>
+        <p>{{email}}</p>
+        <button mat-stroked-button>Manage your Account</button>
+      </mat-card>
+      <!-- <mat-divider></mat-divider> -->
+      <a mat-list-item href="dashboard"><mat-icon matListIcon>view_quilt</mat-icon><div mat-line>Dashboard</div></a>
+      <a mat-list-item href="students"><mat-icon matListIcon>group</mat-icon><div mat-line>Students</div></a>
+      <a mat-list-item href="#"><mat-icon matListIcon>build</mat-icon><div mat-line>Setting</div></a>
+      <a mat-list-item href="#"><mat-icon matListIcon>help</mat-icon><div mat-line>Help</div></a>
+    </mat-nav-list>
+    
+  </mat-drawer>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
+
+
+
+

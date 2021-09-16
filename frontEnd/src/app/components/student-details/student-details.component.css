@@ -1,0 +1,11 @@
+.action{
+    text-align: right;
+    margin-top: -28px;
+}
+.modalImage{
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    float: right;
+    margin: 40px;
+}

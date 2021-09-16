@@ -1,0 +1,97 @@
+<div class="filter">
+  <div class="input" >
+    <!-- <mat-form-field style="margin: 10px;">
+      <mat-label>Discipline</mat-label>
+      <mat-select [(ngModel)]="querry.discipline">
+        <mat-option value="BTech">BTech</mat-option>
+        <mat-option value="MTech">MTech</mat-option>
+        <mat-option value="MCA">MCA</mat-option>     
+      </mat-select>
+    </mat-form-field> -->
+    <mat-form-field style="margin: 10px;">
+      <mat-label>Year</mat-label>
+      <mat-select [(ngModel)]="querry.year">
+        <mat-option value="1st">1st</mat-option>
+        <mat-option value="2nd">2nd</mat-option>
+        <mat-option value="3rd">3rd</mat-option>
+        <mat-option value="4th">4th</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field style="margin: 10px;">
+      <mat-label>Department</mat-label>
+      <mat-select [(ngModel)]="querry.department">
+        <mat-option value="IT">IT</mat-option>
+        <mat-option value="CSE">CSE</mat-option>
+        <mat-option value="ECE">ECE</mat-option>
+        <mat-option value="EE">EE</mat-option>
+        <mat-option value="ME">ME</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button  (click)=addquerry() >Filter</button>
+  </div>
+
+  <div class="view-type">
+    <button mat-icon-button *ngIf="!listView" (click)="listView=!listView">
+      <mat-icon>view_list</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="listView" (click)="listView=!listView">
+      <mat-icon>view_module</mat-icon>
+    </button>
+  </div>
+</div>
+
+<!-- <h1 *ngFor="let filteredstudent of filteredstudents">
+ pq {{ filteredstudent.name }}
+</h1> -->
+
+
+<div class="exp">
+  <div class="list-view" *ngIf="listView">
+    <mat-selection-list [multiple]="false">
+        <mat-list-option (click)="openDialogToView(student)" class="example-ripple-container mat-elevation-z0"
+        matRipple *ngFor="let student of students">
+        <img matListAvatar  src="http://localhost:3000/{{student.studentImage}}" alt="{{student.name}}">
+        <div mat-line>{{student.name | titlecase}} </div>
+        <div mat-line> {{student.discipline}} / {{student.department}} / {{student.year}} year </div>
+        <mat-divider [inset]="true"></mat-divider>
+        </mat-list-option>
+    </mat-selection-list>
+  </div>
+
+  <!-- <div class="grid-view" *ngIf="!listView">
+      <mat-card (click)="openDialogToView(student)" matRipple *ngFor="let student of students">
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>
+              <img matListAvatar  src="http://localhost:3000/{{student.studentImage}}" alt="{{student.name}}">
+              <div mat-line><strong>{{student.name}}</strong></div>
+              <div mat-line> {{student.discipline}} / {{student.department}} / {{student.year}} year </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+  </div> -->
+  <div fxLayout="row wrap" fxLayoutGap="10px grid" 
+  class="contentGrid" *ngIf="!listView">
+     <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let student of students">
+       <mat-card class="card" (click)="openDialogToView(student)">
+         <mat-card-content>
+           <mat-list>
+             <mat-list-item>
+               <img matListAvatar src="http://localhost:3000/{{student.studentImage}}" alt="img of {{student.name}}">
+               <div mat-line>{{student.name | titlecase}} </div>
+               <div mat-line> {{student.discipline}} / {{student.department}} / {{student.year}} year </div>
+             </mat-list-item>
+           </mat-list>
+         </mat-card-content>
+       </mat-card>
+     </div>
+   </div>
+</div>
+<div class="fab">
+  <!-- <button mat-fab (click)="openDialog()" color="accent"> -->
+    <a mat-fab href="/add-student" color="accent">
+    <mat-icon>person_add</mat-icon>
+  </a>
+</div>
+  
